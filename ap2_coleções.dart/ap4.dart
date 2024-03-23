@@ -1,8 +1,8 @@
 void main() {
   Map<String, List<String>> cidades = {};
-  List<String> listaOrdem = [];
+  
 
-  List<String> receberCidade;
+  
 
   cidades = {
     'SC': ['Gaspar', 'Blumenau', 'Florianopolis'],
