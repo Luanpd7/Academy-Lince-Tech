@@ -1,36 +1,38 @@
 void main() {
+  Agrupar agrupar = Agrupar();
 
- Agrupar agrupar = Agrupar();
-
-print( agrupar.toString());
-
+  print(agrupar.toString());
 }
 
 class Agrupar {
-  String nome = 'Luan';
-  String sobrenome = 'Pereira';
-  int idade = 20;
-  //bool maiorIdade = idade >= 18;
+  static const String nome = 'Luan';
+  static const String sobrenome = 'Pereira';
+  static const int idade = 20;
 
-  bool ativo = true;
+  static const bool ativo = true;
 
-  double peso = 60.00;
+  static const double peso = 60.00;
 
   String? nacionalidade;
 
   @override
   String toString() {
     // TODO: implement toString
-    return 'nome = '+nome+ '\n'
-             'sobrenome = '+sobrenome+ '\n'
-               'idade = '+idade.toString()+ '\n'
-                 'situação = '+ativo.toString()+ '\n'
-                    'peso = '+peso.toString()+ '\n'
-                      'nacionalidade = ${ nacionalidade != null ? nacionalidade : 'Não tem nacionalidade'}';
-
-                
-     
+    return 'nome = ' +
+        nome +
+        '\n'
+            'sobrenome = ' +
+        sobrenome +
+        '\n'
+            'idade = ' +
+        idade.toString() +
+        '\n'
+            'situação = ' +
+        ativo.toString() +
+        '\n'
+            'peso = ' +
+        peso.toString() +
+        '\n'
+            'nacionalidade = ${nacionalidade != null ? nacionalidade : 'Não tem nacionalidade'}';
   }
-
- 
 }
