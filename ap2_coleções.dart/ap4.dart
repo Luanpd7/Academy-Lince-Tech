@@ -1,39 +1,34 @@
 void main() {
-  Map<String, List<String>> cidades = {};
-  
-
-  
-
-  cidades = {
-    'SC': ['Gaspar', 'Blumenau', 'Florianopolis'],
-    'MG': ['Belo Horizonte', 'Juiz de Fora', 'Berlinda'],
-    'PR': ['Curitiba', 'Cascavel', 'Foz do Iguacu'],
-    'SP': ['São Paulo', 'Guarulhos', 'Campinas'],
+ final  Map<String,List< String>>   cidades = {
+  'SC': ['Gaspar', 'Blumenau', 'Florianopolis'],
+  'PR': ['Curitiba', 'Cascavel', 'Foz do Iguaçu'],
+  'SP': ['Sao Paulo', 'Guarulhos', 'Campinas'],
+  'MG': ['Belo Horizonte', 'Juiz de Fora', 'Berlinda']
   };
 
-  final cidadesSc = cidades['SC']!;
+  //Todas as siglas
+ final siglaEstado = cidades.keys;
+ print(siglaEstado);
 
-//listar em ordem alfabética as cidades de SC
-  cidadesSc.sort();
-  print(cidadesSc.join(', '));
 
-//listar todas as cidades em ordem alfabética
+// Cidades só de SC
+List<String>? cidadesSc = cidades['SC'];
+cidadesSc!.sort();
+print('cidades SC = $cidadesSc');
 
-  final cidadesComSigla = [];
 
-  for (var siglaEstado in cidades.keys) {
-    final cidadesDoEstado = cidades[siglaEstado]!;
+List<String> cidadesDoEstado = [];
 
-    for (var cidade in cidadesDoEstado) {
-      cidadesComSigla.add('$cidade - $siglaEstado');
-    }
-  }
+// Todas cidades em formato de cidades - sigla
+for(String siglaEstados in cidades.keys){
+ 
+   
+   for(String cidade in cidades[siglaEstados]!){
+         cidadesDoEstado.add('$cidade - $siglaEstados \n');
+   }
+}
 
-  cidadesComSigla.sort();
+cidadesDoEstado.sort();
+print(cidadesDoEstado);
 
-  print('-------------------------------------------------------------------');
-
-  for (var item in cidadesComSigla) {
-    print(item);
-  }
 }

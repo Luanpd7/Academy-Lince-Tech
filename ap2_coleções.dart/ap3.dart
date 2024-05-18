@@ -4,28 +4,28 @@ Em sequência, imprima todos os valores únicos presentes na lista. */
 import 'dart:math';
 
 void main(){
-   List<int> listaOriginal = [];
-   List<int> listaAtualizada = [];
+   List<int> listaOriginal = [10, 10, 20, 32, 43, 54, 31, 4, 5, 6, 3, 22, 22];
+List<int> listaAtualizada = [];
 
-  for (int i = 0; i <= 49; i++) {
-    listaOriginal.add(Random().nextInt(12) + 10);
-  }
-
-  
-  for (int valor in listaOriginal) {
-    if (!listaAtualizada.contains(valor)) {
-      listaAtualizada.add(valor);
+for (int i = listaOriginal.length - 1; i >= 0; i--) {
+  bool duplicado = false;
+  for (int j = i - 1; j >= 0; j--) {
+    if (listaOriginal[i] == listaOriginal[j]) {
+      duplicado = true;
+      break;
     }
+  }
+  if (!duplicado) {
+    listaAtualizada.add(listaOriginal[i]);
+  }
+}
+
+print('Lista Original: $listaOriginal');
+print('Lista Atualizada: $listaAtualizada');
   
     
   }
 
-  print(listaOriginal);
-
-  print('-------------');
-
-  print(listaAtualizada);
 
  
    
-}
